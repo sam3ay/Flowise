@@ -36,8 +36,12 @@ class RedisBackedChatMemory_Memory implements INode {
                 type: 'string',
                 description: 'if empty, chatId will be used automatically',
                 default: '',
+<<<<<<< HEAD
                 additionalParams: true,
                 optional: true
+=======
+                additionalParams: true
+>>>>>>> 9c27786 (dev environment node)
             },
             {
                 label: 'Session Timeouts',

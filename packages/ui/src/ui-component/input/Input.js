@@ -1,7 +1,11 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import { FormControl, OutlinedInput } from '@mui/material'
+<<<<<<< HEAD
 import ExpandTextDialog from 'ui-component/dialog/ExpandTextDialog'
+=======
+import EditPromptValuesDialog from 'ui-component/dialog/EditPromptValuesDialog'
+>>>>>>> 9c27786 (dev environment node)
 
 export const Input = ({ inputParam, value, onChange, disabled = false, showDialog, dialogProps, onDialogCancel, onDialogConfirm }) => {
     const [myValue, setMyValue] = useState(value ?? '')
@@ -45,7 +49,11 @@ export const Input = ({ inputParam, value, onChange, disabled = false, showDialo
                 />
             </FormControl>
             {showDialog && (
+<<<<<<< HEAD
                 <ExpandTextDialog
+=======
+                <EditPromptValuesDialog
+>>>>>>> 9c27786 (dev environment node)
                     show={showDialog}
                     dialogProps={dialogProps}
                     onCancel={onDialogCancel}
@@ -53,7 +61,11 @@ export const Input = ({ inputParam, value, onChange, disabled = false, showDialo
                         setMyValue(newValue)
                         onDialogConfirm(newValue, inputParamName)
                     }}
+<<<<<<< HEAD
                 ></ExpandTextDialog>
+=======
+                ></EditPromptValuesDialog>
+>>>>>>> 9c27786 (dev environment node)
             )}
         </>
     )

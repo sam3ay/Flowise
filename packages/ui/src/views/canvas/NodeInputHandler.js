@@ -5,7 +5,11 @@ import { useSelector } from 'react-redux'
 
 // material-ui
 import { useTheme, styled } from '@mui/material/styles'
+<<<<<<< HEAD
 import { Box, Typography, Tooltip, IconButton, Button } from '@mui/material'
+=======
+import { Box, Typography, Tooltip, IconButton } from '@mui/material'
+>>>>>>> 9c27786 (dev environment node)
 import { tooltipClasses } from '@mui/material/Tooltip'
 import { IconArrowsMaximize, IconEdit, IconAlertTriangle } from '@tabler/icons'
 
@@ -16,6 +20,7 @@ import { Input } from 'ui-component/input/Input'
 import { File } from 'ui-component/file/File'
 import { SwitchInput } from 'ui-component/switch/Switch'
 import { flowContext } from 'store/context/ReactFlowContext'
+<<<<<<< HEAD
 import { isValidConnection } from 'utils/genericHelper'
 import { JsonEditorInput } from 'ui-component/json/JsonEditor'
 import { TooltipWithParser } from 'ui-component/tooltip/TooltipWithParser'
@@ -23,6 +28,12 @@ import ToolDialog from 'views/tools/ToolDialog'
 import FormatPromptValuesDialog from 'ui-component/dialog/FormatPromptValuesDialog'
 
 import { getInputVariables } from 'utils/genericHelper'
+=======
+import { isValidConnection, getAvailableNodesForVariable } from 'utils/genericHelper'
+import { JsonEditorInput } from 'ui-component/json/JsonEditor'
+import { TooltipWithParser } from 'ui-component/tooltip/TooltipWithParser'
+import ToolDialog from 'views/tools/ToolDialog'
+>>>>>>> 9c27786 (dev environment node)
 
 const EDITABLE_TOOLS = ['selectedTool']
 
@@ -46,8 +57,11 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
     const [showAsyncOptionDialog, setAsyncOptionEditDialog] = useState('')
     const [asyncOptionEditDialogProps, setAsyncOptionEditDialogProps] = useState({})
     const [reloadTimestamp, setReloadTimestamp] = useState(Date.now().toString())
+<<<<<<< HEAD
     const [showFormatPromptValuesDialog, setShowFormatPromptValuesDialog] = useState(false)
     const [formatPromptValuesDialogProps, setFormatPromptValuesDialogProps] = useState({})
+=======
+>>>>>>> 9c27786 (dev environment node)
 
     const onExpandDialogClicked = (value, inputParam) => {
         const dialogProp = {
@@ -57,10 +71,21 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
             confirmButtonName: 'Save',
             cancelButtonName: 'Cancel'
         }
+<<<<<<< HEAD
+=======
+
+        if (!disabled) {
+            const nodes = reactFlowInstance.getNodes()
+            const edges = reactFlowInstance.getEdges()
+            const nodesForVariable = inputParam.acceptVariable ? getAvailableNodesForVariable(nodes, edges, data.id, inputParam.id) : []
+            dialogProp.availableNodesForVariable = nodesForVariable
+        }
+>>>>>>> 9c27786 (dev environment node)
         setExpandDialogProps(dialogProp)
         setShowExpandDialog(true)
     }
 
+<<<<<<< HEAD
     const onFormatPromptValuesClicked = (value, inputParam) => {
         // Preset values if the field is format prompt values
         let inputValue = value
@@ -85,6 +110,8 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
         setShowFormatPromptValuesDialog(true)
     }
 
+=======
+>>>>>>> 9c27786 (dev environment node)
     const onExpandDialogSave = (newValue, inputParamName) => {
         setShowExpandDialog(false)
         data.inputs[inputParamName] = newValue
@@ -255,6 +282,7 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
                             />
                         )}
                         {inputParam.type === 'json' && (
+<<<<<<< HEAD
                             <>
                                 {!inputParam?.acceptVariable && (
                                     <JsonEditorInput
@@ -282,6 +310,14 @@ const NodeInputHandler = ({ inputAnchor, inputParam, data, disabled = false, isA
                                     </>
                                 )}
                             </>
+=======
+                            <JsonEditorInput
+                                disabled={disabled}
+                                onChange={(newValue) => (data.inputs[inputParam.name] = newValue)}
+                                value={data.inputs[inputParam.name] ?? inputParam.default ?? ''}
+                                isDarkMode={customization.isDarkMode}
+                            />
+>>>>>>> 9c27786 (dev environment node)
                         )}
                         {inputParam.type === 'options' && (
                             <Dropdown

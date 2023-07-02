@@ -3,7 +3,11 @@ import { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Dialog, DialogContent, DialogTitle } from '@mui/material'
+<<<<<<< HEAD
 import ReactJson from 'flowise-react-json-view'
+=======
+import ReactJson from 'react-json-view'
+>>>>>>> 9c27786 (dev environment node)
 
 const SourceDocDialog = ({ show, dialogProps, onCancel }) => {
     const portalElement = document.getElementById('portal')

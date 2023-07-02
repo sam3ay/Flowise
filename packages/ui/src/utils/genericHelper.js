@@ -287,7 +287,11 @@ export const generateExportFlowData = (flowData) => {
 }
 
 export const getAvailableNodesForVariable = (nodes, edges, target, targetHandle) => {
+<<<<<<< HEAD
     // example edge id = "llmChain_0-llmChain_0-output-outputPrediction-string|json-llmChain_1-llmChain_1-input-promptValues-string"
+=======
+    // example edge id = "llmChain_0-llmChain_0-output-outputPrediction-string-llmChain_1-llmChain_1-input-promptValues-string"
+>>>>>>> 9c27786 (dev environment node)
     //                    {source}  -{sourceHandle}                           -{target}  -{targetHandle}
     const parentNodes = []
     const inputEdges = edges.filter((edg) => edg.target === target && edg.targetHandle === targetHandle)
@@ -355,6 +359,7 @@ export const generateRandomGradient = () => {
 
     return gradient
 }
+<<<<<<< HEAD
 
 export const getInputVariables = (paramValue) => {
     let returnVal = paramValue
@@ -383,3 +388,5 @@ export const getInputVariables = (paramValue) => {
     }
     return inputVariables
 }
+=======
+>>>>>>> 9c27786 (dev environment node)

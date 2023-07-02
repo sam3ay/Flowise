@@ -163,9 +163,13 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
 
     // Prevent blank submissions and allow for multiline input
     const handleEnter = (e) => {
+<<<<<<< HEAD
         // Check if IME composition is in progress
         const isIMEComposition = e.isComposing || e.keyCode === 229
         if (e.key === 'Enter' && userInput && !isIMEComposition) {
+=======
+        if (e.key === 'Enter' && userInput) {
+>>>>>>> 9c27786 (dev environment node)
             if (!e.shiftKey && userInput) {
                 handleSubmit(e)
             }

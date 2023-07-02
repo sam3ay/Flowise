@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import { FormControl, Popover } from '@mui/material'
@@ -27,6 +28,15 @@ export const JsonEditorInput = ({ value, onChange, inputParam, nodes, edges, nod
             [mouseUpKey]: val
         }))
     }
+=======
+import { useState } from 'react'
+import PropTypes from 'prop-types'
+import { FormControl } from '@mui/material'
+import ReactJson from 'react-json-view'
+
+export const JsonEditorInput = ({ value, onChange, disabled = false, isDarkMode = false }) => {
+    const [myValue, setMyValue] = useState(value ? JSON.parse(value) : {})
+>>>>>>> 9c27786 (dev environment node)
 
     const onClipboardCopy = (e) => {
         const src = e.src
@@ -37,6 +47,7 @@ export const JsonEditorInput = ({ value, onChange, inputParam, nodes, edges, nod
         }
     }
 
+<<<<<<< HEAD
     useEffect(() => {
         if (!disabled && nodes && edges && nodeId && inputParam) {
             const nodesForVariable = inputParam?.acceptVariable ? getAvailableNodesForVariable(nodes, edges, nodeId, inputParam.id) : []
@@ -44,6 +55,8 @@ export const JsonEditorInput = ({ value, onChange, inputParam, nodes, edges, nod
         }
     }, [disabled, inputParam, nodes, edges, nodeId])
 
+=======
+>>>>>>> 9c27786 (dev environment node)
     return (
         <>
             <FormControl sx={{ mt: 1, width: '100%' }} size='small'>
@@ -59,6 +72,7 @@ export const JsonEditorInput = ({ value, onChange, inputParam, nodes, edges, nod
                     />
                 )}
                 {!disabled && (
+<<<<<<< HEAD
                     <div key={JSON.stringify(myValue)}>
                         <ReactJson
                             theme={isDarkMode ? 'ocean' : 'rjv-default'}
@@ -113,6 +127,30 @@ export const JsonEditorInput = ({ value, onChange, inputParam, nodes, edges, nod
                     />
                 </Popover>
             )}
+=======
+                    <ReactJson
+                        theme={isDarkMode ? 'ocean' : 'rjv-default'}
+                        style={{ padding: 10, borderRadius: 10 }}
+                        src={myValue}
+                        name={null}
+                        quotesOnKeys={false}
+                        displayDataTypes={false}
+                        enableClipboard={(e) => onClipboardCopy(e)}
+                        onEdit={(edit) => {
+                            setMyValue(edit.updated_src)
+                            onChange(JSON.stringify(edit.updated_src))
+                        }}
+                        onAdd={() => {
+                            //console.log(add)
+                        }}
+                        onDelete={(deleteobj) => {
+                            setMyValue(deleteobj.updated_src)
+                            onChange(JSON.stringify(deleteobj.updated_src))
+                        }}
+                    />
+                )}
+            </FormControl>
+>>>>>>> 9c27786 (dev environment node)
         </>
     )
 }
@@ -121,9 +159,13 @@ JsonEditorInput.propTypes = {
     value: PropTypes.string,
     onChange: PropTypes.func,
     disabled: PropTypes.bool,
+<<<<<<< HEAD
     isDarkMode: PropTypes.bool,
     inputParam: PropTypes.object,
     nodes: PropTypes.array,
     edges: PropTypes.array,
     nodeId: PropTypes.string
+=======
+    isDarkMode: PropTypes.bool
+>>>>>>> 9c27786 (dev environment node)
 }

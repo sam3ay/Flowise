@@ -3,7 +3,81 @@
     "nodes": [
         {
             "width": 300,
+<<<<<<< HEAD
             "height": 524,
+=======
+            "height": 711,
+            "id": "chatPromptTemplate_1",
+            "position": {
+                "x": 441.8516979620723,
+                "y": 636.1108860994266
+            },
+            "type": "customNode",
+            "data": {
+                "id": "chatPromptTemplate_1",
+                "label": "Chat Prompt Template",
+                "name": "chatPromptTemplate",
+                "type": "ChatPromptTemplate",
+                "baseClasses": ["ChatPromptTemplate", "BaseChatPromptTemplate", "BasePromptTemplate"],
+                "category": "Prompts",
+                "description": "Schema to represent a chat prompt",
+                "inputParams": [
+                    {
+                        "label": "System Message",
+                        "name": "systemMessagePrompt",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "You are a helpful assistant that translates {input_language} to {output_language}.",
+                        "id": "chatPromptTemplate_1-input-systemMessagePrompt-string"
+                    },
+                    {
+                        "label": "Human Message",
+                        "name": "humanMessagePrompt",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "{text}",
+                        "id": "chatPromptTemplate_1-input-humanMessagePrompt-string"
+                    },
+                    {
+                        "label": "Format Prompt Values",
+                        "name": "promptValues",
+                        "type": "string",
+                        "rows": 4,
+                        "placeholder": "{\n  \"input_language\": \"English\",\n  \"output_language\": \"French\"\n}",
+                        "optional": true,
+                        "acceptVariable": true,
+                        "list": true,
+                        "id": "chatPromptTemplate_1-input-promptValues-string"
+                    }
+                ],
+                "inputAnchors": [],
+                "inputs": {
+                    "systemMessagePrompt": "You are a helpful assistant that translates {input_language} to {output_language}.",
+                    "humanMessagePrompt": "{input}",
+                    "promptValues": "{\n  \"input_language\": \"English\",\n  \"output_language\": \"French\"\n}"
+                },
+                "outputAnchors": [
+                    {
+                        "id": "chatPromptTemplate_1-output-chatPromptTemplate-ChatPromptTemplate|BaseChatPromptTemplate|BasePromptTemplate",
+                        "name": "chatPromptTemplate",
+                        "label": "ChatPromptTemplate",
+                        "type": "ChatPromptTemplate | BaseChatPromptTemplate | BasePromptTemplate"
+                    }
+                ],
+                "outputs": {},
+                "selected": false
+            },
+            "selected": false,
+            "positionAbsolute": {
+                "x": 441.8516979620723,
+                "y": 636.1108860994266
+            },
+            "dragging": false
+        },
+        {
+            "width": 300,
+            "height": 526,
+>>>>>>> 9c27786 (dev environment node)
             "id": "chatOpenAI_1",
             "position": {
                 "x": 439.5219561593599,
@@ -154,7 +228,11 @@
         },
         {
             "width": 300,
+<<<<<<< HEAD
             "height": 405,
+=======
+            "height": 407,
+>>>>>>> 9c27786 (dev environment node)
             "id": "llmChain_1",
             "position": {
                 "x": 865.7775572410412,
@@ -195,7 +273,11 @@
                 ],
                 "inputs": {
                     "model": "{{chatOpenAI_1.data.instance}}",
+<<<<<<< HEAD
                     "prompt": "{{chatPromptTemplate_0.data.instance}}",
+=======
+                    "prompt": "{{chatPromptTemplate_1.data.instance}}",
+>>>>>>> 9c27786 (dev environment node)
                     "chainName": "Language Translation"
                 },
                 "outputAnchors": [
@@ -211,10 +293,17 @@
                                 "type": "LLMChain | BaseChain | BaseLangChain"
                             },
                             {
+<<<<<<< HEAD
                                 "id": "llmChain_1-output-outputPrediction-string|json",
                                 "name": "outputPrediction",
                                 "label": "Output Prediction",
                                 "type": "string | json"
+=======
+                                "id": "llmChain_1-output-outputPrediction-string",
+                                "name": "outputPrediction",
+                                "label": "Output Prediction",
+                                "type": "string"
+>>>>>>> 9c27786 (dev environment node)
                             }
                         ],
                         "default": "llmChain"
@@ -231,6 +320,7 @@
                 "y": 543.9211372857111
             },
             "dragging": false
+<<<<<<< HEAD
         },
         {
             "width": 300,
@@ -299,6 +389,8 @@
                 "y": 649.7619214034173
             },
             "dragging": false
+=======
+>>>>>>> 9c27786 (dev environment node)
         }
     ],
     "edges": [
@@ -314,12 +406,21 @@
             }
         },
         {
+<<<<<<< HEAD
             "source": "chatPromptTemplate_0",
             "sourceHandle": "chatPromptTemplate_0-output-chatPromptTemplate-ChatPromptTemplate|BaseChatPromptTemplate|BasePromptTemplate",
             "target": "llmChain_1",
             "targetHandle": "llmChain_1-input-prompt-BasePromptTemplate",
             "type": "buttonedge",
             "id": "chatPromptTemplate_0-chatPromptTemplate_0-output-chatPromptTemplate-ChatPromptTemplate|BaseChatPromptTemplate|BasePromptTemplate-llmChain_1-llmChain_1-input-prompt-BasePromptTemplate",
+=======
+            "source": "chatPromptTemplate_1",
+            "sourceHandle": "chatPromptTemplate_1-output-chatPromptTemplate-ChatPromptTemplate|BaseChatPromptTemplate|BasePromptTemplate",
+            "target": "llmChain_1",
+            "targetHandle": "llmChain_1-input-prompt-BasePromptTemplate",
+            "type": "buttonedge",
+            "id": "chatPromptTemplate_1-chatPromptTemplate_1-output-chatPromptTemplate-ChatPromptTemplate|BaseChatPromptTemplate|BasePromptTemplate-llmChain_1-llmChain_1-input-prompt-BasePromptTemplate",
+>>>>>>> 9c27786 (dev environment node)
             "data": {
                 "label": ""
             }

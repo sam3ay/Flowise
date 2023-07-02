@@ -18,7 +18,10 @@
         "clsx": "^1.1.1",
         "flowise-embed": "*",
         "flowise-embed-react": "*",
+<<<<<<< HEAD
         "flowise-react-json-view": "*",
+=======
+>>>>>>> 9c27786 (dev environment node)
         "formik": "^2.2.6",
         "framer-motion": "^4.1.13",
         "history": "^5.0.0",
@@ -34,6 +37,10 @@
         "react-datepicker": "^4.8.0",
         "react-device-detect": "^1.17.0",
         "react-dom": "^18.2.0",
+<<<<<<< HEAD
+=======
+        "react-json-view": "^1.21.3",
+>>>>>>> 9c27786 (dev environment node)
         "react-markdown": "^8.0.6",
         "react-perfect-scrollbar": "^1.5.8",
         "react-redux": "^8.0.5",

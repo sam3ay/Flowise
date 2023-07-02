@@ -16,7 +16,10 @@
     },
     "license": "SEE LICENSE IN LICENSE.md",
     "dependencies": {
+<<<<<<< HEAD
         "@aws-sdk/client-dynamodb": "^3.360.0",
+=======
+>>>>>>> 9c27786 (dev environment node)
         "@dqbd/tiktoken": "^1.0.7",
         "@getzep/zep-js": "^0.3.1",
         "@huggingface/inference": "^2.6.1",

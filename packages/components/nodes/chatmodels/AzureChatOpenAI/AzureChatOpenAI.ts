@@ -43,10 +43,13 @@ class AzureChatOpenAI_ChatModels implements INode {
                     {
                         label: 'gpt-35-turbo',
                         name: 'gpt-35-turbo'
+<<<<<<< HEAD
                     },
                     {
                         label: 'gpt-35-turbo-16k',
                         name: 'gpt-35-turbo-16k'
+=======
+>>>>>>> 9c27786 (dev environment node)
                     }
                 ],
                 default: 'gpt-35-turbo',
@@ -74,10 +77,21 @@ class AzureChatOpenAI_ChatModels implements INode {
             {
                 label: 'Azure OpenAI Api Version',
                 name: 'azureOpenAIApiVersion',
+<<<<<<< HEAD
                 type: 'string',
                 placeholder: '2023-06-01-preview',
                 description:
                     'Description of Supported API Versions. Please refer <a target="_blank" href="https://learn.microsoft.com/en-us/azure/cognitive-services/openai/reference#chat-completions">examples</a>'
+=======
+                type: 'options',
+                options: [
+                    {
+                        label: '2023-03-15-preview',
+                        name: '2023-03-15-preview'
+                    }
+                ],
+                default: '2023-03-15-preview'
+>>>>>>> 9c27786 (dev environment node)
             },
             {
                 label: 'Max Tokens',

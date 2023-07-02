@@ -31,7 +31,16 @@ class PromptTemplate_Prompts implements INode {
             {
                 label: 'Format Prompt Values',
                 name: 'promptValues',
+<<<<<<< HEAD
                 type: 'json',
+=======
+                type: 'string',
+                rows: 4,
+                placeholder: `{
+  "input_language": "English",
+  "output_language": "French"
+}`,
+>>>>>>> 9c27786 (dev environment node)
                 optional: true,
                 acceptVariable: true,
                 list: true
